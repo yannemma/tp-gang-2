@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout Source') {
             steps {
-                git branch: 'main', credentialsId: 'git-credentials', url: 'https://github.com/yannemma/exercice_perso_deployment1.git'
+                git 'https://github.com/yannemma/exercice_perso_deployment1.git'
             }
         }
 
