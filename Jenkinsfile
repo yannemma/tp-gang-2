@@ -5,6 +5,7 @@ pipeline {
         DOCKER_IMAGE_NAME = "emmanuel236/yoyama"
         REGISTRY_CREDENTIAL = 'dockerhublogin' // ID des credentials Docker Hub
         KUBECONFIG_CREDENTIAL = 'kubernetes' // ID des credentials Kubernetes
+        dockerImage = ""
     }
 
     stages {
