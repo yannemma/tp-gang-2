@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_NAME = "emmanuel236/yoyama"
+        DOCKER_IMAGE_NAME = "emmanuel236/mon-site-web"
         REGISTRY_CREDENTIAL = 'dockerhublogin' // ID des credentials Docker Hub
         KUBECONFIG_CREDENTIAL = 'kubernetes' // ID des credentials Kubernetes
         dockerImage = ""
@@ -12,24 +12,6 @@ pipeline {
         stage('Checkout Source') {
             steps {
                 git 'https://github.com/yannemma/exercice_perso_deployment1.git'
-            }
-        }
-
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    dockerImage = docker.build DOCKER_IMAGE_NAME
-                }
-            }
-        }
-
-        stage('Push Docker Image') {
-            steps {
-                script {
-                    docker.withRegistry('https://registry.hub.docker.com', REGISTRY_CREDENTIAL) {
-                        dockerImage.push("latest")
-                    }
-                }
             }
         }
 
