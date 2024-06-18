@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: mon-app-container
-        image: emmanuel236/yoyama:latest
+        image: emmanuel236/mon-site-web:latest
         ports:
         - containerPort: 80
